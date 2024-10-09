@@ -2,11 +2,9 @@ package com.aprendec.conexion;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.Duration;
 import javax.sql.DataSource;
 
-import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
-
+import org.apache.commons.dbcp2.BasicDataSource;
 
 public class Conexion {
 
@@ -21,7 +19,7 @@ public class Conexion {
 		dataSource.setInitialSize(20);
 		dataSource.setMaxIdle(15);
 		dataSource.setMaxTotal(20);
-		dataSource.setMaxWait(Duration.ofMillis(5000));
+		dataSource.setMaxWaitMillis(5000);
 	}
 
 	private static DataSource getDataSource() {
